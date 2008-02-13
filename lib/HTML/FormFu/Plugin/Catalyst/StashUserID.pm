@@ -19,10 +19,12 @@ sub new {
     return $self;
 }
 
-sub pre_process {
-    my ( $self, $form ) = @_;
+sub process {
+    my ( $self ) = @_;
 
-    $form->stash->{ $self->stash_key } = $form->stash->{context}->user->id;
+    my $stash = $self->form->stash;
+
+    $stash->{ $self->stash_key } = $stash->{context}->user->id;
 
     return;
 }
