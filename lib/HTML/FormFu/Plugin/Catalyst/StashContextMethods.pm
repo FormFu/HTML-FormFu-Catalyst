@@ -18,12 +18,12 @@ sub process {
     }
 
     my $form    = $self->form;
-    my $value   = $form->{context};
+    my $value   = $form->stash->{context};
     my $methods = $self->methods;
 
     $methods = [$methods] if ref $methods ne 'ARRAY';
 
-    for my $method ($methods) {
+    for my $method (@$methods) {
         $value = $value->$method;
     }
 
