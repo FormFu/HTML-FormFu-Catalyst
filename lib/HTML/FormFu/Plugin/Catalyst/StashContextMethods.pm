@@ -5,9 +5,9 @@ use base 'HTML::FormFu::Plugin';
 use Class::C3;
 use Carp qw( croak );
 
-use HTML::FormFu::Attribute qw/ mk_accessors /;
+use HTML::FormFu::Attribute qw/ mk_attr_accessors /;
 
-__PACKAGE__->mk_accessors(qw/ stash_key methods /);
+__PACKAGE__->mk_attr_accessors(qw/ stash_key methods /);
 
 sub process {
     my ( $self ) = @_;
